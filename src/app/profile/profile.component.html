@@ -33,5 +33,10 @@
 
 <!-- for loop directive -->
 <ul>
-    <li *ngFor="let f of fruits;index as i"> <h3>{{i}} {{f}}</h3></li>
+    <li *ngFor="let f of fruits;index as i;even as e" [class]="e? 'btn btn-success':'btn btn-danger'"> <h3>{{i}} {{f}}</h3></li>
+</ul>
+
+<!-- using ngClass -->
+<ul>
+    <li *ngFor="let f of fruits;index as i;even as e" [ngClass]="{'btn btn-primary': e , 'btn btn-secondary': !e}"> <h3>{{i}} {{f}}</h3></li>
 </ul>
