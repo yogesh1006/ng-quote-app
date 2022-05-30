@@ -10,7 +10,7 @@ export class ProfileComponent {
   name: string = "YOgesh";
   age: number = 23;
   status: string = "coder";
-  salary: number = 100;
+  salary: number = 50;
   
   btnColor:string = "btn btn-primary";
   isDisabled:boolean = true;

@@ -1,20 +1,32 @@
 <p>
-    <!-- {{var_name }} is known as interpolation in angular. -->
-    HI i am {{name}} . my age {{age}}, my status is {{status}}. my salary is {{salary}}.
+  <!-- {{var_name }} is known as interpolation in angular. -->
+  HI i am {{ name }} . my age {{ age }}, my status is {{ status }}. my salary is
+  {{ salary }}.
 </p>
 
-
 <!-- property binding = square bracket -->
-<button [class]="btnColor"  [disabled]="isDisabled">Click Me</button>
-
+<button [class]="btnColor" [disabled]="isDisabled">Click Me</button>
 
 <!-- event binding = round brackets-->
 <button class="btn btn-primary" (click)="convertToInr()">Convert to INR</button>
 
-
+<!-- TWO WAY DATA BINDING _COMMUNICATION BETWEEN HTML TO TS FILE, TS TO HTML FILE. -->
 
 <!-- property binding and event binding both together-->
-<input type="text" [value]="inputValue"  (input)="getInput($event)"/>
+<input
+  type="text"
+  [value]="inputValue"
+  (input)="inputValue = $any($event.target).value"
+/>
 
-<h2>{{inputValue}}</h2>
+<!-- same as above both together - banana in the box syntx --but not working -->
+<input type="text" [(ngModel)]="inputValue" />
 
+<h2>{{ inputValue }}</h2>
+
+<!-- Directives -if-else, ngIf is structural directive in angular-->
+<h3 *ngIf="salary > 70; else lowsal">Party to banti hai</h3>
+
+<ng-template #lowsal>
+  <h3>Salary is low to get a GF</h3>
+</ng-template>
