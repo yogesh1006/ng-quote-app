@@ -1,8 +1,12 @@
 <p>
   <!-- {{var_name }} is known as interpolation in angular. -->
-  HI i am {{ name }} . my age {{ age }}, my status is {{ status }}. my salary is
-  {{ salary }}.
+  Hi I am {{ name | titlecase}} . my age {{ age }}, my status is {{ status }}. my salary is
+  {{ salary | currency:'INR'}}.
 </p>
+
+<!-- Date pipe -->
+<input type="date" [(ngModel)]="myDate" />
+{{myDate | date:"fullDate"}}
 
 <!-- property binding = square bracket -->
 <button [class]="btnColor" [disabled]="isDisabled">Click Me</button>
