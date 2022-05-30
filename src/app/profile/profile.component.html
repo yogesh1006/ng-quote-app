@@ -1,0 +1,20 @@
+<p>
+    <!-- {{var_name }} is known as interpolation in angular. -->
+    HI i am {{name}} . my age {{age}}, my status is {{status}}. my salary is {{salary}}.
+</p>
+
+
+<!-- property binding = square bracket -->
+<button [class]="btnColor"  [disabled]="isDisabled">Click Me</button>
+
+
+<!-- event binding = round brackets-->
+<button class="btn btn-primary" (click)="convertToInr()">Convert to INR</button>
+
+
+
+<!-- property binding and event binding both together-->
+<input type="text" [value]="inputValue"  (input)="getInput($event)"/>
+
+<h2>{{inputValue}}</h2>
+
