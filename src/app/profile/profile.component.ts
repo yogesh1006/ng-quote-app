@@ -17,6 +17,8 @@ export class ProfileComponent {
 
   inputValue:string = "Yogesh";
 
+  fruits:string[] = ["banana","grapes","apple","hapusAam"];
+
   constructor() {
 
     setTimeout(() => {
