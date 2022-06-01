@@ -1,3 +1,12 @@
 <div class="app">
-    <app-profile></app-profile>
+  <app-users
+    *ngFor="let user of users; index as i"
+    [name]="user.name"
+    [age]="user.age"
+    [status]="user.status"
+    [salary]="user.salary"
+    [img]="user.img"
+    (myevent)="receivedData($event)"
+  ></app-users>
+
 </div>
