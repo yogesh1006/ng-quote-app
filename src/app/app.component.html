@@ -7,6 +7,12 @@
     [salary]="user.salary"
     [img]="user.img"
     (myevent)="receivedData($event)"
-  ></app-users>
-
+  >
+   <!-- content projection- passing html to child component -->
+    <h3>Header</h3>
+    <h4>Footer</h4>
+    <h5>{{title}}</h5>
+    <!-- not working  -->
+    <input type="text" [(ngModel)] = "title"/>
+  </app-users>
 </div>
