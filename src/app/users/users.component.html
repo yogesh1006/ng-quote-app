@@ -1,6 +1,6 @@
 <div class="card" style="width: 18rem">
   <!-- content projection -->
-  <ng-content select="h3"></ng-content>
+  <ng-content></ng-content>
   <img [src]="img" class="card-img-top" alt="..." />
   <div class="card-body">
     <h5 class="card-title">Name : {{ name | titlecase}}</h5>
@@ -8,7 +8,6 @@
     <p>Status : {{ status }}</p>
     <p>Salary : {{ salary | currency }}</p>
   </div>
-  <ng-content select="h4"></ng-content>
 
 </div>
 <button class="btn btn-success" (click)="passData()">Click to fire event</button>

@@ -1,4 +1,4 @@
-<div class="app">
+<div class="app" *ngIf="show">
   <app-users
     *ngFor="let user of users; index as i"
     [name]="user.name"
@@ -7,12 +7,14 @@
     [salary]="user.salary"
     [img]="user.img"
     (myevent)="receivedData($event)"
+    [title]="title"
   >
-   <!-- content projection- passing html to child component -->
-    <h3>Header</h3>
-    <h4>Footer</h4>
-    <h5>{{title}}</h5>
-    <!-- not working  -->
-    <input type="text" [(ngModel)] = "title"/>
+    <!-- content projection- passing html to child component -->
+    <h2>{{title}}</h2>
+
+    <!-- both ways working  -->
+    <!-- <input type="text" [(ngModel)]="title"/> -->
+    <input type="text" [value]="title" (input)="title=$any($event.target).value" />
   </app-users>
 </div>
+<button class="btn btn-danger" (click)="show = !show">Destroy Component</button>
